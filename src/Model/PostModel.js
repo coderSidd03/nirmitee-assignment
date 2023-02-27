@@ -16,7 +16,8 @@ const postSchema = new mongoose.Schema({
         required : true
     },
     publishedAt : {
-        type : Date
+        type : Date,
+        default : new Date()
     }, 
     isDeleted : {
         type : Boolean,
@@ -24,4 +25,4 @@ const postSchema = new mongoose.Schema({
     }
 }, {timestamps : true})
 
-module.exports = mongoose.model('post', postSchema);
+module.exports = mongoose.model('POST', postSchema);

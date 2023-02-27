@@ -21,4 +21,4 @@ const userSchema = new mongoose.Schema({
     }
 }, {timestamps : true})
 
-module.exports = mongoose.model('User10', userSchema);
+module.exports = mongoose.model('USER', userSchema);
