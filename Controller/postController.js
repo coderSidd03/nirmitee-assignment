@@ -38,8 +38,13 @@ const seePost =  async function(req, res){
 
 const editPost =  async function(req, res){
     try{
-        let updateDetail=req.body;
-        
+        let userId=req.param.userId;
+
+        let updatedData=req.body;
+        let updateUser = await postModel.findByIdAndUpdate({id:userId},{data:updatedData},{new:true});
+        return res.send(200).
+        send({status:true,message:"User details updated successfully",data:updateUser});
+
 
     }catch(error){
         return res.status(500).send({status:false,message:error.message});

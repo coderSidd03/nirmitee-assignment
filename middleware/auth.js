@@ -40,16 +40,16 @@ const authorisation = async function (req, res, next) {
             return res.status(400).send({ status: false, message: "Please enter correct userId" })
         }
         let userLoggedIn = req.decodedToken.userId
-        let userData = await userModel.findById(userId)
-        if (userData === null){
-        return res.status(404).send({ status: false, message: "bookId does not exist" })
+        let postData = await postModel.findById(userId)
+        if (postData === null){
+        return res.status(404).send({ status: false, message: "userId does not exist in postmodel" })
         }
-        if (userData.userId != userLoggedIn) {
+        if (postData.userId != userLoggedIn) {
             return res.status(403).send({ status: false, message: "You are not authorised" })
         }
         next()
     } catch (err) {
-        return res.status(500).send({ status: false, message: "Token Problem" })
+        return res.status(500).send({ status: false, message:err.message})
     }
 }
 
