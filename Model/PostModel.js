@@ -12,7 +12,7 @@ const postSchema = new mongoose.Schema({
     },
     userId : {
         type : ObjectId,
-        ref : 'user',
+        ref : 'user10',
         required : true
     },
     publishedAt : {
