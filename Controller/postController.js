@@ -19,5 +19,16 @@ const addPost = async function(req, res){
     }
 }
 
+const seePost =  function async(req, res){
 
-module.exports = {addPost}
+}
+
+const editPost =  function async(req, res){
+
+}
+
+const deletePost =  function async(req, res){
+
+}
+
+module.exports = {addPost,seePost, editPost,deletePost}
