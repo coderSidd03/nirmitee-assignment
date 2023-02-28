@@ -87,13 +87,11 @@ const login = async function (req, res) {
   );
 
   res.header("Authorization", token);
-  return res
-    .status(201)
-    .send({
-      status: "true",
-      message: "Success",
-      data: { user: `${user.title}. ${user.name}`, token: token },
-    });
+  return res.status(201).send({
+    status: "true",
+    message: "Success",
+    data: { user: `${user.title}. ${user.name}`, token: token },
+  });
 };
 
 module.exports = { addUser, login };
